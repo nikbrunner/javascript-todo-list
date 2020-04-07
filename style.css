@@ -1,0 +1,107 @@
+:root {
+  --color-1: #f7ca36;
+  --color-2: #fda085;
+  --color-warning: #ff6f47;
+  --color-success: #4fd23b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(120deg, var(--color-1), var(--color-2));
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+}
+
+header {
+  font-size: 1.5rem;
+}
+
+header,
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form input {
+  border-radius: 16px;
+  text-align: center;
+}
+
+form input,
+form button {
+  padding: 0.5rem 1rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list {
+  min-width: 30%;
+  list-style: none;
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem;
+  background: white;
+  color: black;
+  font-size: 1.5rem;
+  transition: all 0.5s ease;
+}
+
+.todo-item {
+  /* What the hell ? */
+  flex: 1;
+  padding: 0 1rem;
+}
+
+.trash-btn,
+.complete-btn {
+  background: var(--color-warning);
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.complete-btn {
+  background: var(--color-success);
+}
+
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.fall {
+  transform: translateY(10rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+/* Filter */
+.filter.active {
+  background: var(--color-success);
+  color: white;
+}
