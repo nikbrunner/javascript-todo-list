@@ -16,17 +16,18 @@
   </head>
   <body>
     <header>
-      <h1>nibru's Todo List</h1>
+      <h1>Plain Todo List</h1>
     </header>
 
     <form class="todo-form">
       <input class="todo-input" type="text" />
-      <div class="filters">
-        <button class="filter filter--all">All</button>
-        <button class="filter filter--completed">Completed</button>
-        <button class="filter filter--uncompleted">Uncompleted</button>
-      </div>
     </form>
+
+    <div class="todo-filters">
+      <button class="todo-filter todo-filter--all">All</button>
+      <button class="todo-filter todo-filter--completed">Completed</button>
+      <button class="todo-filter todo-filter--uncompleted">Uncompleted</button>
+    </div>
 
     <div class="todo-container">
       <ul class="todo-list"></ul>

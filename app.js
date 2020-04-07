@@ -8,10 +8,10 @@ const state = {
 const todoForm = document.querySelector('.todo-form');
 const todoInput = document.querySelector('.todo-input');
 const todoList = document.querySelector('.todo-list');
-const btnFilterAll = document.querySelector('.filter--all');
-const btnFilterCompleted = document.querySelector('.filter--completed');
-const btnFilterUncompleted = document.querySelector('.filter--uncompleted');
-const btnsFilter = document.querySelectorAll('.filter');
+const btnFilterAll = document.querySelector('.todo-filter--all');
+const btnFilterCompleted = document.querySelector('.todo-filter--completed');
+const btnFilterUncompleted = document.querySelector('.todo-filter--uncompleted');
+const btnFilters = document.querySelectorAll('.todo-filter');
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', init);
@@ -30,7 +30,6 @@ function init() {
 
 function setState(key, val) {
   state[key] = val;
-  console.log(state);
 }
 
 function emptyAndFocusInput() {
@@ -39,8 +38,8 @@ function emptyAndFocusInput() {
 }
 
 function setFilter(filterValue) {
-  btnsFilter.forEach(btn => {
-    if (btn.classList.contains(`filter--${filterValue}`)) {
+  btnFilters.forEach(btn => {
+    if (btn.classList.contains(`todo-filter--${filterValue}`)) {
       btn.classList.add('active');
     } else {
       btn.classList.remove('active');
@@ -54,9 +53,6 @@ function setFilter(filterValue) {
 function addTodo(e) {
   e.preventDefault();
   let todoInputVal = todoInput.value;
-  // let todo = {
-  //   text: todoInput.value,
-  //   completed: false
   // };
 
   if (todoInputVal) {
@@ -192,13 +188,13 @@ function getLocalTodos() {
 
 function removeLocalTodo(todo) {
   if (localStorage.getItem('todos') === null) {
-    todos = [];
+    state.todos = [];
   } else {
-    todos = JSON.parse(localStorage.getItem('todos'));
+    state.todos = JSON.parse(localStorage.getItem('todos'));
   }
 
   const todoText = todo.children[0].innerText;
-  const todoIndex = todos.indexOf(todoText);
-  todos.splice(todoIndex, 1);
-  localStorage.setItem('todos', JSON.stringify(todos));
+  const todoIndex = state.todos.indexOf(todoText);
+  state.todos.splice(todoIndex, 1);
+  localStorage.setItem('todos', JSON.stringify(state.todos));
 }

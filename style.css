@@ -19,28 +19,46 @@ body {
 }
 
 header {
-  font-size: 1.5rem;
-}
-
-header,
-form {
   min-height: 20vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1.5rem;
 }
 
-form input {
-  border-radius: 16px;
+.todo-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.todo-input {
+  display: block;
+  border-radius: 0;
   text-align: center;
-}
-
-form input,
-form button {
   padding: 0.5rem 1rem;
   font-size: 2rem;
   border: none;
   background: white;
+}
+
+/* filters */
+.todo-filters {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.todo-filter {
+  background: white;
+  padding: 1rem;
+  font-size: 1rem;
+  border: none;
+}
+
+.todo-filter.active {
+  background: var(--color-success);
+  color: white;
 }
 
 .todo-container {
@@ -54,11 +72,12 @@ form button {
   list-style: none;
 }
 
+/* todo item styling */
 .todo {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0.5rem;
+  margin-bottom: 0.5rem;
   background: white;
   color: black;
   font-size: 1.5rem;
@@ -98,10 +117,4 @@ form button {
 .fall {
   transform: translateY(10rem) rotateZ(20deg);
   opacity: 0;
-}
-
-/* Filter */
-.filter.active {
-  background: var(--color-success);
-  color: white;
 }
