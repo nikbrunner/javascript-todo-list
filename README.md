@@ -1,4 +1,4 @@
-# Pure JavaScript ToDo List
+# JavaScript - ToDo List
 
 This is a todo list for practice with no dependencies.
 
